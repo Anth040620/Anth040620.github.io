@@ -11,12 +11,8 @@
     body {
       font-family: 'Indie Flower', cursive !important;
       background: #FDE3A7;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0px;
+      padding: 0px;
     }
 
     ::selection {
@@ -24,8 +20,8 @@
     }
 
     h4 {
-      font-size: 2em;
-      line-height: 1;
+      font-size: 26px;
+      line-height: 1px;
       font-family: 'Amatic SC', cursive !important;
     }
 
@@ -34,18 +30,20 @@
 
     .card {
       color: #013243;
-      width: 90%;
-      max-width: 300px;
-      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 400px;
       background: #e0e1dc;
       transform-style: preserve-3d;
+      transform: translate(-50%, -50%) perspective(2000px);
       box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
       transition: 1s;
-      padding-bottom: 20px;
     }
 
     .card:hover {
-      transform: perspective(2000px) rotate(15deg) scale(1.05);
+      transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
       box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
     }
 
@@ -73,16 +71,15 @@
       transform: skewY(-45deg);
     }
 
-    .imgBox {
+    .card .imgBox {
       width: 100%;
-      height: auto;
+      height: 100%;
       position: relative;
       transform-origin: left;
       transition: .7s;
-      overflow: hidden;
     }
 
-    .bark {
+    .card .bark {
       position: absolute;
       background: #e0e1dc;
       width: 100%;
@@ -91,10 +88,9 @@
       transition: .7s;
     }
 
-    .imgBox img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .card .imgBox img {
+      min-width: 250px;
+      max-height: 400px;
     }
 
     .card:hover .imgBox {
@@ -107,27 +103,26 @@
       box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
     }
 
-    .details {
-      position: relative;
+    .card .details {
+      position: absolute;
       top: 0;
       left: 0;
       box-sizing: border-box;
-      padding: 10px;
+      padding: 0 0 0 10px;
       z-index: -1;
-      margin-top: 20px;
-      max-height: 260px;
+      margin-top: 70px;
+      height: 260px;
       overflow-y: scroll;
     }
 
-    .details p {
-      font-size: 1em;
-      line-height: 1.5em;
-      padding: 0 0 0 10px;
+    .card .details p {
+      font-size: 15px;
+      line-height: 25px;
+      padding: 0 0 0 20px;
     }
 
-    .details h4 {
+    .card .details h4 {
       text-align: center;
-      margin: 10px 0;
     }
 
     .text-right {
@@ -138,7 +133,7 @@
     .birthday-message {
       background: linear-gradient(45deg, #ff6ec4, #7873f5);
       color: transparent;
-      font-size: 2em;
+      font-size: 28px;
       font-family: 'Amatic SC', cursive !important;
       animation: glow 1.5s ease-in-out infinite alternate;
       text-align: center;
@@ -153,32 +148,17 @@
         text-shadow: 0 0 20px #7873f5, 0 0 30px #7873f5, 0 0 40px #7873f5, 0 0 50px #7873f5, 0 0 60px #7873f5, 0 0 70px #7873f5, 0 0 80px #7873f5;
       }
     }
-
-    @media screen and (max-width: 600px) {
-      .details p {
-        font-size: 0.9em;
-        line-height: 1.3em;
-      }
-
-      h4 {
-        font-size: 1.5em;
-      }
-
-      .birthday-message {
-        font-size: 1.5em;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="imgBox">
       <div class="bark"></div>
-      <img src="Anth040620.github.io/img/cumple.jpg" alt="Cumpleaños">
+      <img src="img/cumple.jpg">
     </div>
     <div class="details">
       <h4 class="color1">¡Feliz Cumpleaños!</h4>
-      <div class="birthday-message">¡Feliz Cumpleaños!</div>
+      
       <p>¡Que este día tan especial esté lleno de alegría y amor!</p>
       <p>Cada año contigo es una bendición. ¡Feliz Cumpleaños!</p>
       <p>Espero que todos tus sueños se hagan realidad. ¡Felicidades!</p>
